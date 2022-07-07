@@ -1,14 +1,92 @@
-body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 400px;
-}
-
 .wave {
     width: 100%;
     min-height: 100px;
     object-fit: cover;
     margin-bottom: 0;
   }
+
+.objects_container {
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: -19%;
+    padding: 0 50px;
+    width: 100%;
+}
+
+.image {
+    max-width: 50vh;
+}
+
+.arrow_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+    width: 100%;
+    height: 32px;
+
+    margin-top: -1.1%;
+}
+
+.informations {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    /* margin-top: -8%; */
+}
+
+h2 {
+    text-align: center;
+    font: normal normal 600 16px/27px Montserrat;
+    letter-spacing: 1.6px;
+    color: #B9D0EF;
+}
+
+
+h1 {
+    text-align: center;
+    font: normal normal bold 30px/45px Montserrat;
+    color: #FFFFFF;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+.major_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.twins_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumb {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.check {
+    padding: 0 5px;
+}
+
+p {
+    color: #B9D0EF
+}
+
