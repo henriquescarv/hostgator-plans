@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import api from './services/api'
+import styles from './globals/global.css'
+import Header from "./components/Header/Header";
+import Infos from "./components/Infos/Infos";
 
 export default function App() {
   const [listPrices, setListPrices] = useState([]);
@@ -13,7 +16,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Olá, mundo!</h1>
+      <Header/>
+      <Infos/>
     </div>
   );
 }

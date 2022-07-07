@@ -1,0 +1,14 @@
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+}
+
+.wave {
+    width: 100%;
+    min-height: 100px;
+    object-fit: cover;
+    margin-bottom: 0;
+  }
