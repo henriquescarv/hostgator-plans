@@ -3,6 +3,7 @@ import api from './services/api'
 import styles from './globals/global.css'
 import Header from "./components/Header/Header";
 import Infos from "./components/Infos/Infos";
+import Values from "./components/Values/Values";
 
 export default function App() {
   const [listPrices, setListPrices] = useState([]);
@@ -18,6 +19,7 @@ export default function App() {
     <div className="App">
       <Header/>
       <Infos/>
+      <Values/>
     </div>
   );
 }
