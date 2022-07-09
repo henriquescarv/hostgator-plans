@@ -1,5 +1,20 @@
-.cicle {
-    margin: 20px;
+.values_container {
+    padding: 30px;
+}
+
+.text_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_box p {
+    font-size: 14px;
+    color: var(--color-dark-blue)
+}
+
+.cycle {
+    margin: 10px 0 60px 0;
     display: flex;
     align-items: baseline;
     justify-content: center;
@@ -83,9 +98,238 @@
 .item_row {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.plans {
-    background-color: violet;
+.item_row h1 {
+    color: var(--color-dark-blue)
+}
 
+.orange_box {
+    background-color: #FF6A17;
+}
+
+.plan {
+    width: 330px;
+    height: 650px;
+
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #DFECFF;
+}
+
+.plan_m {
+    width: 330px;
+    height: 650px;
+
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #DFECFF;
+
+    margin: 0 10px;
+
+    z-index: 1000;
+}
+
+.plan_m_container {
+    display: flex;
+    align-items: center;
+}
+
+.orange_detail {
+    height: 670px;
+    width: 330px;
+    background-color: #FF6A17;
+    margin: 0 10px;
+    position: absolute;
+
+    margin-bottom: 5px;
+
+    border: 1px solid #DFECFF;
+    border-radius: 5px;
+}
+
+.plan_m span {
+    background-color: rgb(48, 180, 122);
+    width: 100px;
+}
+
+.title_plan {
+    padding: 30px;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.align_text_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prices_plan {
+    border-top: 1px solid #DFECFF;
+    border-bottom: 1px solid #DFECFF;
+    padding: 36px 0
+}
+
+.discount p {
+    color: #333333;
+    padding: 0 3px;
+}
+
+.traced {
+    text-decoration: line-through;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.equivalent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cycle_price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.cycle_price p {
+    font-size: 20px;
+    color: var(--color-dark-blue);
+}
+
+.cycle_price h1 {
+    padding-left: 5px;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 22px 22px;
+}
+
+.button_orange {
+    cursor: pointer;
+    border: none;
+    background-color: #FF6A17;
+    width: 279px;
+    height: 52px;
+
+    border-radius: 26px;
+}
+
+.button_blue {
+    cursor: pointer;
+    border: none;
+    background-color: var(--color-blue);
+    width: 279px;
+    height: 52px;
+
+    border-radius: 26px;
+}
+
+button h2 {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0px
+}
+
+.free_domain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.free_domain p {
+    color: #333333;
+    padding: 0 2px;
+}
+
+.spare {
+    display: flex;
+    justify-content: center;
+    align-items: center;display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 0 0 0;
+}
+
+.spare p {
+    color: var(--color-dark-blue);
+}
+
+.green_box {
+    background-color: #51C99C;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0px;
+
+    width: 80px;
+    height: 23px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    margin: 0 5px;
+}
+
+.infos_plan {
+    padding: 22px 0 30px 0;
+}
+
+.infos_plan p {
+    color: #333333;
+    padding: 0 2px;
+}
+
+.list_item {
+    padding: 5px 25px;
+
+    display: flex;
+    align-items: center;
+}
+
+.underlined p {
+    border-bottom: 1.8px dashed #B9D0EF
+}
+
+.free_underlined {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.conditions_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conditions {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding: 20px 0;
+    width: 1020px;
+}
+
+.conditions a {
+    color: #4480C5;
+    opacity: 70%;
 }
