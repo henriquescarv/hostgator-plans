@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import api from '../../services/api'
-import './Values.css'
-import icon_p from '../../images/plan_p.svg'
-import icon_m from '../../images/plan_m.svg'
-import icon_turbo from '../../images/plan_turbo.svg'
-import icon_info from '../../images/info.svg'
+import React, { useState, useEffect } from 'react';
+import api from '../../services/api';
+import './Values.css';
+import icon_p from '../../images/plan_p.svg';
+import icon_m from '../../images/plan_m.svg';
+import icon_turbo from '../../images/plan_turbo.svg';
+import icon_info from '../../images/info.svg';
+import axios from 'axios';
 
 export default function Values() {
     const [plan_cycle, setPlan_cycle] = useState();
@@ -12,16 +13,13 @@ export default function Values() {
     const [listPlans, setListPlans] = useState();
 
     useEffect(() => {
-      api
-        .get('') 
-        .then(({data}) => {setListPlans(data.shared.products)},)
-        .catch((err) => {console.error('Error! ' + err)})
+        axios.get('https://2891637c-8ab7-4a84-906b-a98465726f85.mock.pstmn.io/prices')
+        .then(response => {setListPlans(response.data.shared.products)})
     }, []);
 
     const [planTurbo, setPlanTurbo] = useState();
     const [planM, setPlanM] = useState();
     const [planP, setPlanP] = useState();
-    
 
     useEffect(() => {
         if (listPlans) {
@@ -39,6 +37,7 @@ export default function Values() {
 
         let planType = list.product_5
         let planCycle = planType.cycle.triennially
+        let equivalentPrice = 'equivalente a'
 
         if (id === 5) {
             planType = list.product_5
@@ -54,6 +53,7 @@ export default function Values() {
             planCycle = planType.cycle.annually
         } else if (cycle === 'monthly') {
             planCycle = planType.cycle.monthly
+            equivalentPrice = '⠀'
         }
 
         var plan_name = planType.name
@@ -67,14 +67,14 @@ export default function Values() {
             original_price: plan_original_price.toString().replace('.', ','),
             discount: plan_discount.toString().replace('.', ','),
             price: plan_price.toString().replace('.', ','),
-            monthly_price: plan_monthly_price.toString().replace('.', ',')
+            monthly_price: plan_monthly_price.toString().replace('.', ','),
+            equivalent: equivalentPrice
         }
         return plan
     }
 
     return (
         <div className='values_container'>
-            {console.log(planTurbo)}
             <div className='text_box'>
                 <p>Quero pagar a cada:</p>
             </div>
@@ -107,21 +107,23 @@ export default function Values() {
                 <div className='plan'>
                     <div className='title_plan'>
                         <div className='image'>
-                            <img src={`${icon_p}`} alt='M'/>
+                            <img src={`${icon_p}`} alt='P'/>
                         </div>
-                        <h1>{planP.name}</h1>
+                        {console.log(planP)}
+                        <h1>{planP?.name}</h1>
+                        
                     </div>
                     <div className='prices_plan'>
                         <div className='discount'>
                             <div className='align_text_box'>
-                                <p className='traced'>R$ {planP.original_price}</p>
-                                <p className='bold'>R$ {planP.price}</p>
+                                <p className='traced'>R$ {planP?.original_price}</p>
+                                <p className='bold'>R$ {planP?.price}</p>
                             </div>
-                            <p className='equivalent'>equivalente a</p>
+                            <p className='equivalent'>{planP?.equivalent}</p>
                         </div>
                         <div className='cycle_price'>
                             <p>R$</p>
-                            <h1>{planP.monthly_price}</h1>
+                            <h1>{planP?.monthly_price}</h1>
                             <p>/p mês*</p>
                         </div>
                         <div className='button_container'>
@@ -134,7 +136,7 @@ export default function Values() {
                             <img src={`${icon_info}`} alt='info'/>
                         </div>
                         <div className='spare'>
-                            <p>economize R$ {planP.discount}</p>
+                            <p>economize R$ {planP?.discount}</p>
                             <div className='green_box'>
                                 <h3>40% OFF</h3>
                             </div>
@@ -174,19 +176,19 @@ export default function Values() {
                             <div className='image'>
                                 <img src={`${icon_m}`} alt='M'/>
                             </div>
-                            <h1>{planM.name}</h1>
+                            <h1>{planM?.name}</h1>
                         </div>
                         <div className='prices_plan'>
                             <div className='discount'>
                                 <div className='align_text_box'>
-                                    <p className='traced'>R$ {planM.original_price}</p>
-                                    <p className='bold'>R$ {planM.price}</p>
+                                    <p className='traced'>R$ {planM?.original_price}</p>
+                                    <p className='bold'>R$ {planM?.price}</p>
                                 </div>
-                                <p className='equivalent'>equivalente a</p>
+                                <p className='equivalent'>{planM?.equivalent}</p>
                             </div>
                             <div className='cycle_price'>
                                 <p>R$</p>
-                                <h1>{planM.monthly_price}</h1>
+                                <h1>{planM?.monthly_price}</h1>
                                 <p>/p mês*</p>
                             </div>
                             <div className='button_container'>
@@ -199,7 +201,7 @@ export default function Values() {
                                 <img src={`${icon_info}`} alt='info'/>
                             </div>
                             <div className='spare'>
-                                <p>economize R$ {planM.discount}</p>
+                                <p>economize R$ {planM?.discount}</p>
                                 <div className='green_box'>
                                     <h3>40% OFF</h3>
                                 </div>
@@ -238,19 +240,19 @@ export default function Values() {
                         <div className='image'>
                             <img src={`${icon_turbo}`} alt='M'/>
                         </div>
-                        <h1>{planTurbo.name}</h1>
+                        <h1>{planTurbo?.name}</h1>
                     </div>
                     <div className='prices_plan'>
                         <div className='discount'>
                             <div className='align_text_box'>
-                                <p className='traced'>R$ {planTurbo.original_price}</p>
-                                <p className='bold'>R$ {planTurbo.price}</p>
+                                <p className='traced'>R$ {planTurbo?.original_price}</p>
+                                <p className='bold'>R$ {planTurbo?.price}</p>
                             </div>
-                            <p className='equivalent'>equivalente a</p>
+                            <p className='equivalent'>{planTurbo?.equivalent}</p>
                         </div>
                         <div className='cycle_price'>
                             <p>R$</p>
-                            <h1>{planTurbo.monthly_price}</h1>
+                            <h1>{planTurbo?.monthly_price}</h1>
                             <p>/p mês*</p>
                         </div>
                         <div className='button_container'>
@@ -263,7 +265,7 @@ export default function Values() {
                             <img src={`${icon_info}`} alt='info'/>
                         </div>
                         <div className='spare'>
-                            <p>economize R$ {planTurbo.discount}</p>
+                            <p>economize R$ {planTurbo?.discount}</p>
                             <div className='green_box'>
                                 <h3>40% OFF</h3>
                             </div>
