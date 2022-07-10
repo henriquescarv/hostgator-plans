@@ -23,8 +23,6 @@ textarea {
   font-family: "Montserrat", sans-serif;
 }
 
-/* #root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+img {
+  user-select: none;
+}

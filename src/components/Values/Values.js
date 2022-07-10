@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import api from '../../services/api';
 import './Values.css';
 import icon_p from '../../images/plan_p.svg';
 import icon_m from '../../images/plan_m.svg';
 import icon_turbo from '../../images/plan_turbo.svg';
 import icon_info from '../../images/info.svg';
+import left from '../../images/left.svg'
+import right from '../../images/right.svg'
 
 export default function Values() {
     const [plan_cycle, setPlan_cycle] = useState();
@@ -26,7 +28,8 @@ export default function Values() {
             setPlanM(getPlanData(6, plan_cycle))
             setPlanP(getPlanData(5, plan_cycle))
         }
-        
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [listPlans, plan_cycle])
 
     function getPlanData(plan_id, cycle) {
@@ -79,6 +82,18 @@ export default function Values() {
         return plan
     }
 
+    const item_row = useRef(null)
+
+    const scrollLeft = (e) =>{
+        // e.preventDefault();
+        item_row.current.scrollLeft -= 300;
+    }
+
+    const scrollRight = (e) =>{
+        // e.preventDefault();
+        item_row.current.scrollLeft += 300;
+    }
+
     return (
         <div className='values_container'>
             <div className='text_box'>
@@ -90,34 +105,36 @@ export default function Values() {
                         <input className='radio_input' type='radio' value='triennially' name='myRadio' id='triennially' defaultChecked onChange={e=>setPlan_cycle(e.target.value)}/>
                         <label className='radio_label' for='triennially'>
                             <div className='circle'/>
-                            3 anos
+                            <p>3 anos</p>
                         </label>
                     </div>
                     <div className='radio_box'>
                         <input className='radio_input' type='radio' value='annually' name='myRadio' id='annually' onChange={e=>setPlan_cycle(e.target.value)}/>
                         <label className='radio_label' for='annually'>
                             <div className='circle'/>
-                            1 ano
+                            <p>1 ano</p>
                         </label>
                     </div>
                     <div className='radio_box'>
                         <input className='radio_input' type='radio' value='monthly' name='myRadio' id='monthly' onChange={e=>setPlan_cycle(e.target.value)}/>
                         <label className='radio_label' for='monthly'>
                             <div className='circle'/>
-                            1 mês
+                            <p>1 mês</p>
                         </label>
                     </div>
                 </div>
             </div>
-            <div className='item_row'>
+            <div className='buttons'>
+                <button onClick={() => scrollLeft()}><img src={left} alt='left' draggable='false'/></button>
+                <button onClick={() => scrollRight()}><img src={right} alt='right' draggable='false'/></button>
+            </div>
+            <div className='item_row' ref={item_row}>
                 <div className='plan'>
                     <div className='title_plan'>
-                        <div className='image'>
-                            <img src={`${icon_p}`} alt='P'/>
+                        <div className='image_plan'>
+                            <img src={`${icon_p}`} alt='P' draggable='false'/>
                         </div>
-                        {console.log(listPlans)}
                         <h1>{planP?.name}</h1>
-                        
                     </div>
                     <div className='prices_plan'>
                         <div className='discount'>
@@ -139,7 +156,7 @@ export default function Values() {
                         </div>
                         <div className='free_domain'>
                             <p className='bold'>1 ano de Domínio Grátis</p>
-                            <img src={`${icon_info}`} alt='info'/>
+                            <img src={`${icon_info}`} alt='info' draggable='false'/>
                         </div>
                         <div className='spare'>
                             <p>economize R$ {planP?.discount}</p>
@@ -176,11 +193,11 @@ export default function Values() {
                     </div>
                 </div>
                 <div className='plan_m_container'>
-                    <div className='orange_detail'/>
+                    {/* <div className='orange_detail'/> */}
                     <div className='plan_m'>
                         <div className='title_plan'>
-                            <div className='image'>
-                                <img src={`${icon_m}`} alt='M'/>
+                            <div className='image_plan'>
+                                <img src={`${icon_m}`} alt='M' draggable='false'/>
                             </div>
                             <h1>{planM?.name}</h1>
                         </div>
@@ -204,7 +221,7 @@ export default function Values() {
                             </div>
                             <div className='free_domain'>
                                 <p className='bold'>1 ano de Domínio Grátis</p>
-                                <img src={`${icon_info}`} alt='info'/>
+                                <img src={`${icon_info}`} alt='info' draggable='false'/>
                             </div>
                             <div className='spare'>
                                 <p>economize R$ {planM?.discount}</p>
@@ -243,8 +260,8 @@ export default function Values() {
                 </div>
                 <div className='plan'>
                     <div className='title_plan'>
-                        <div className='image'>
-                            <img src={`${icon_turbo}`} alt='M'/>
+                        <div className='image_plan'>
+                            <img src={`${icon_turbo}`} alt='M' draggable='false'/>
                         </div>
                         <h1>{planTurbo?.name}</h1>
                     </div>
@@ -268,7 +285,7 @@ export default function Values() {
                         </div>
                         <div className='free_domain'>
                             <p className='bold'>1 ano de Domínio Grátis</p>
-                            <img src={`${icon_info}`} alt='info'/>
+                            <img src={`${icon_info}`} alt='info' draggable='false'/>
                         </div>
                         <div className='spare'>
                             <p>economize R$ {planTurbo?.discount}</p>
@@ -312,4 +329,4 @@ export default function Values() {
             </div>
         </div>
     );
-}
+};

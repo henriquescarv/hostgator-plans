@@ -7,7 +7,7 @@ export default function Header() {
         <header>
             <div className="header-logo">
                 <a href="/">
-                    <img src={`${logo}`} alt='HostGator'/>
+                    <img src={`${logo}`} alt='HostGator' draggable='false'/>
                 </a>
             </div>
         </header>
