@@ -66,6 +66,12 @@
     background: #4480C5;
     color: white;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.radio_label:hover {
+    background: rgb(239, 240, 245);
+    transition: 0.3s
 }
 
 .circle {
@@ -226,6 +232,12 @@
     height: 52px;
 
     border-radius: 26px;
+
+    transition: 0.3s;
+}
+
+.button_orange:hover {
+    background-color: #d3530d;
 }
 
 .button_blue {
@@ -236,6 +248,12 @@
     height: 52px;
 
     border-radius: 26px;
+
+    transition: 0.3s
+}
+
+.button_blue:hover {
+    background-color: var(--color-dark-blue);
 }
 
 button h2 {
@@ -332,4 +350,8 @@ button h2 {
 .conditions a {
     color: #4480C5;
     opacity: 70%;
+}
+
+.conditions a:hover {
+    opacity: 100%;
 }

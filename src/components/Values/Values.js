@@ -5,7 +5,6 @@ import icon_p from '../../images/plan_p.svg';
 import icon_m from '../../images/plan_m.svg';
 import icon_turbo from '../../images/plan_turbo.svg';
 import icon_info from '../../images/info.svg';
-import axios from 'axios';
 
 export default function Values() {
     const [plan_cycle, setPlan_cycle] = useState();
@@ -13,7 +12,7 @@ export default function Values() {
     const [listPlans, setListPlans] = useState();
 
     useEffect(() => {
-        axios.get('https://2891637c-8ab7-4a84-906b-a98465726f85.mock.pstmn.io/prices')
+        api.get('')
         .then(response => {setListPlans(response.data.shared.products)})
     }, []);
 
