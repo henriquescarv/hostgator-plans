@@ -3,7 +3,7 @@
 <h2>Requisits</h2>
 
 - Install the Node.js in local: https://nodejs.org/en/
-- To run the application, is needed to open the directory of the project ('hostgator-plans') in a terminal and run the command 'npm start';
+- To run the application, is needed to open the project directory ('hostgator-plans') in a terminal and run the 'npm start' command;
 
 
 <h2>Features</h2>
