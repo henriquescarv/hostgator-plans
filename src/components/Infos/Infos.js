@@ -1,5 +1,3 @@
-//info
-
 import React from "react";
 import './Infos.css'
 import wave from '../../images/wave.svg'
@@ -7,7 +5,6 @@ import icon_check from '../../images/icon-check.svg'
 import image_1 from '../../images/image_1.svg'
 import image_2 from '../../images/image_2.svg'
 import arrow from '../../images/arrow.svg'
-// import images
 
 export default function Infos() {
     return (

@@ -153,16 +153,13 @@
 }
 
 .plan_m {
-    width: 330px;
     height: 650px;
+
+    margin-top: 10px;
 
     background-color: white;
     border-radius: 5px;
     border: 1px solid #DFECFF;
-
-    margin: 0 10px;
-
-    /* z-index: 1000; */
 }
 
 .plan_m_container {
@@ -172,15 +169,15 @@
 
 .orange_detail {
     height: 670px;
-    width: 330px;
+
     background-color: #FF6A17;
     margin: 0 10px;
-    position: fixed;
-
-    margin-bottom: 5px;
 
     border: 1px solid #DFECFF;
     border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
 }
 
 .plan_m span {

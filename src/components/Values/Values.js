@@ -193,67 +193,68 @@ export default function Values() {
                     </div>
                 </div>
                 <div className='plan_m_container'>
-                    {/* <div className='orange_detail'/> */}
-                    <div className='plan_m'>
-                        <div className='title_plan'>
-                            <div className='image_plan'>
-                                <img src={`${icon_m}`} alt='M' draggable='false'/>
-                            </div>
-                            <h1>{planM?.name}</h1>
-                        </div>
-                        <div className='prices_plan'>
-                            <div className='discount'>
-                                <div className='align_text_box'>
-                                    <p className='traced'>R$ {planM?.original_price}</p>
-                                    <p className='bold'>R$ {planM?.price}</p>
+                    <div className='orange_detail'>
+                        <div className='plan_m'>
+                            <div className='title_plan'>
+                                <div className='image_plan'>
+                                    <img src={`${icon_m}`} alt='M' draggable='false'/>
                                 </div>
-                                <p className='equivalent'>{planM?.equivalent}</p>
+                                <h1>{planM?.name}</h1>
                             </div>
-                            <div className='cycle_price'>
-                                <p>R$</p>
-                                <h1>{planM?.monthly_price}</h1>
-                                <p>/p mês*</p>
-                            </div>
-                            <div className='button_container'>
-                                <button id='button' className='button_orange' onClick={() => window.location.href = `/?a=add&pid=${planM?.plan_id}&billingcycle=${planM?.this_cycle}&promocode=PROMOHG40`}>
-                                    <h2>Contrate Agora</h2>
-                                </button>
-                            </div>
-                            <div className='free_domain'>
-                                <p className='bold'>1 ano de Domínio Grátis</p>
-                                <img src={`${icon_info}`} alt='info' draggable='false'/>
-                            </div>
-                            <div className='spare'>
-                                <p>economize R$ {planM?.discount}</p>
-                                <div className='green_box'>
-                                    <h3>40% OFF</h3>
+                            <div className='prices_plan'>
+                                <div className='discount'>
+                                    <div className='align_text_box'>
+                                        <p className='traced'>R$ {planM?.original_price}</p>
+                                        <p className='bold'>R$ {planM?.price}</p>
+                                    </div>
+                                    <p className='equivalent'>{planM?.equivalent}</p>
+                                </div>
+                                <div className='cycle_price'>
+                                    <p>R$</p>
+                                    <h1>{planM?.monthly_price}</h1>
+                                    <p>/p mês*</p>
+                                </div>
+                                <div className='button_container'>
+                                    <button id='button' className='button_orange' onClick={() => window.location.href = `/?a=add&pid=${planM?.plan_id}&billingcycle=${planM?.this_cycle}&promocode=PROMOHG40`}>
+                                        <h2>Contrate Agora</h2>
+                                    </button>
+                                </div>
+                                <div className='free_domain'>
+                                    <p className='bold'>1 ano de Domínio Grátis</p>
+                                    <img src={`${icon_info}`} alt='info' draggable='false'/>
+                                </div>
+                                <div className='spare'>
+                                    <p>economize R$ {planM?.discount}</p>
+                                    <div className='green_box'>
+                                        <h3>40% OFF</h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className='infos_plan'>
-                            <div className='underlined'>
+                            <div className='infos_plan'>
+                                <div className='underlined'>
+                                    <div className='list_item'>
+                                        <p>Sites ilimitados</p>
+                                    </div>
+                                </div>
                                 <div className='list_item'>
-                                    <p>Sites ilimitados</p>
+                                    <p className='bold'>100 GB</p>
+                                    <p>de Armazenamento</p>
                                 </div>
-                            </div>
-                            <div className='list_item'>
-                                <p className='bold'>100 GB</p>
-                                <p>de Armazenamento</p>
-                            </div>
-                            <div className='underlined'>
+                                <div className='underlined'>
+                                    <div className='list_item'>
+                                        <p>Contas de E-mail</p>
+                                        <p className='bold'>Ilimitadas</p>
+                                    </div>
+                                </div>
                                 <div className='list_item'>
-                                    <p>Contas de E-mail</p>
-                                    <p className='bold'>Ilimitadas</p>
+                                    <p>Criador de sites</p>
+                                    <p className='free_underlined'>Grátis</p>
                                 </div>
-                            </div>
-                            <div className='list_item'>
-                                <p>Criador de sites</p>
-                                <p className='free_underlined'>Grátis</p>
-                            </div>
-                            <div className='list_item'>
-                                <p>Certificado SSL</p>
-                                <p className='bold'>Grátis</p>
-                                <p>(https)</p>
+                                <div className='list_item'>
+                                    <p>Certificado SSL</p>
+                                    <p className='bold'>Grátis</p>
+                                    <p>(https)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
