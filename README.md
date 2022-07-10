@@ -1,10 +1,10 @@
-<h1>HostGator prices</h1>
+<h1>HostGator Prices</h1>
 
 <h2>Requisits</h2>
 
 - Install the Node.js in local: https://nodejs.org/en/
 - Open the project directory ('hostgator-plans') in a terminal;
-- Execute the 'npm install axios' in a terminal, to install Axios Docs;
+- Execute the command 'npm install axios' in a terminal, to install Axios Docs;
 - Run the 'npm start' command.
 
 In case of an error with 'react-scripts', like this:
