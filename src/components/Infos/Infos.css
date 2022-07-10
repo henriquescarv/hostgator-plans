@@ -113,7 +113,7 @@ p {
     color: #B9D0EF
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1550px) {
     .image {
         width: 0;
     }
