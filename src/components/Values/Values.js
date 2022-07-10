@@ -33,6 +33,8 @@ export default function Values() {
     function getPlanData(plan_id, cycle) {
         let list = listPlans
 
+        let cycleOf = 'triennially'
+
         let id = plan_id
 
         let planType = list.product_5
@@ -49,10 +51,13 @@ export default function Values() {
 
         if (cycle === 'triennially') {
             planCycle = planType.cycle.triennially
+            cycleOf = 'triennially'
         } else if (cycle === 'annually') {
             planCycle = planType.cycle.annually
+            cycleOf = 'annually'
         } else if (cycle === 'monthly') {
             planCycle = planType.cycle.monthly
+            cycleOf = 'monthly'
             equivalentPrice = '⠀'
         }
 
@@ -68,7 +73,9 @@ export default function Values() {
             discount: plan_discount.toString().replace('.', ','),
             price: plan_price.toString().replace('.', ','),
             monthly_price: plan_monthly_price.toString().replace('.', ','),
-            equivalent: equivalentPrice
+            equivalent: equivalentPrice,
+            this_cycle: cycleOf,
+            plan_id: id
         }
         return plan
     }
@@ -109,7 +116,7 @@ export default function Values() {
                         <div className='image'>
                             <img src={`${icon_p}`} alt='P'/>
                         </div>
-                        {console.log(planP)}
+                        {console.log(listPlans)}
                         <h1>{planP?.name}</h1>
                         
                     </div>
@@ -127,7 +134,7 @@ export default function Values() {
                             <p>/p mês*</p>
                         </div>
                         <div className='button_container'>
-                            <button className='button_blue'>
+                            <button className='button_blue' onClick={() => window.location.href = `/?a=add&pid=${planP?.plan_id}&billingcycle=${planP?.this_cycle}&promocode=PROMOHG40`}>
                                 <h2>Contrate Agora</h2>
                             </button>
                         </div>
@@ -192,7 +199,7 @@ export default function Values() {
                                 <p>/p mês*</p>
                             </div>
                             <div className='button_container'>
-                                <button className='button_orange'>
+                                <button id='button' className='button_orange' onClick={() => window.location.href = `/?a=add&pid=${planM?.plan_id}&billingcycle=${planM?.this_cycle}&promocode=PROMOHG40`}>
                                     <h2>Contrate Agora</h2>
                                 </button>
                             </div>
@@ -256,7 +263,7 @@ export default function Values() {
                             <p>/p mês*</p>
                         </div>
                         <div className='button_container'>
-                            <button className='button_blue'>
+                            <button className='button_blue' onClick={() => window.location.href = `/?a=add&pid=${planTurbo?.plan_id}&billingcycle=${planTurbo?.this_cycle}&promocode=PROMOHG40`}>
                                 <h2>Contrate Agora</h2>
                             </button>
                         </div>
