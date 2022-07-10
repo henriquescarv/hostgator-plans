@@ -3,8 +3,15 @@
 <h2>Requisits</h2>
 
 - Install the Node.js in local: https://nodejs.org/en/
-- To run the application, is needed to open the project directory ('hostgator-plans') in a terminal and run the 'npm start' command;
+- Open the project directory ('hostgator-plans') in a terminal;
+- Execute the 'npm install axios' in a terminal, to install Axios Docs;
+- Run the 'npm start' command.
 
+In case of an error with 'react-scripts', like this:
+
+<img src='https://user-images.githubusercontent.com/31019817/178161594-eea5b293-3324-42cb-843e-bbafa8fd8234.png' width='400px'/>
+
+You need to run the command 'npm install react-scripts' and then execute 'npm audit fix'. After that, just run 'npm start' again.
 
 <h2>Features</h2>
 
