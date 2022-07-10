@@ -41,7 +41,7 @@
 }
 
 .image {
-    max-width: 50vh;
+    max-width: 55vh;
 }
 
 .arrow_container {
@@ -113,7 +113,7 @@ p {
     color: #B9D0EF
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1480px) {
     .image {
         width: 0;
     }
