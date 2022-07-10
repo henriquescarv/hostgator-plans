@@ -388,7 +388,7 @@ button h2 {
 .conditions {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 
     padding: 20px 0;
     width: 1020px;
